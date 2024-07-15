@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Backend\AdminDashboardController;
+use App\Http\Controllers\Backend\AdminProductController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PagesController;
 use App\Http\Controllers\ProfileController;
@@ -18,7 +20,14 @@ Route::middleware('auth')->group(function () {
 });
 
 // Pages route 
-Route::controller(PagesController::class)->group(function (){});
+Route::controller(PagesController::class)->group(function () {
+});
 // Admin route 
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+    // Product route 
+    Route::resource('product', AdminProductController::class);
+    // 
+});
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

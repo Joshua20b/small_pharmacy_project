@@ -21,7 +21,32 @@
                     <div class="card-header"></div>
                     <div class="card-body">
                         <div class="form-group">
-                            <label for=""></label>
+                            <label for="image">Product Image</label>
+                            <input class="form-control" type="file" name="image" id="image">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Product Name</label>
+                            <input class="form-control" type="text" placeholder="Product Name" name="name" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Product Category</label>
+                            <input class="form-control" type="text" placeholder="Product Category" name="category"
+                                id="category">
+                        </div>
+                        <div class="form-group">
+                            <label for="original_price">Original Price</label>
+                            <input class="form-control" type="text" placeholder="Original Price" name="original_price"
+                                id="original_price">
+                        </div>
+                        <div class="form-group">
+                            <label for="discount_price">Discount Price</label>
+                            <input class="form-control" type="text" placeholder="Discount Price" name="discount_price"
+                                id="discount_price">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" name="description" id="description" cols="30"
+                                rows="10"></textarea>
                         </div>
                     </div>
                     <div class="card-footer">
