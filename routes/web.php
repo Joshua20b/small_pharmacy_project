@@ -21,6 +21,8 @@ Route::middleware('auth')->group(function () {
 
 // Pages route 
 Route::controller(PagesController::class)->group(function () {
+    Route::get('product', 'products')->name('product');
+    Route::get('product/{}/view', '')->name('product-details');
 });
 // Admin route 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {

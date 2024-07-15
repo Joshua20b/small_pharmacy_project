@@ -2,7 +2,6 @@
 <html class="no-js" lang="zxx">
 
 
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -16,7 +15,7 @@
 
     <!-- CSS here -->
     <link rel="stylesheet" href="/frontend/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/frontend/css/owl.carousel.min.css"> 
+    <link rel="stylesheet" href="/frontend/css/owl.carousel.min.css">
     <link rel="stylesheet" href="/frontend/css/animate.min.css">
     <link rel="stylesheet" href="/frontend/css/nice-select.css">
     <link rel="stylesheet" href="/frontend/css/magnific-popup.css">
@@ -31,12 +30,12 @@
 <body>
 
     <!-- header begin -->
-    @include('frontend.auth.layouts.header') 
+    @include('frontend.auth.layouts.header')
     <!-- header end -->
 
     <main>
         <!-- hero-area start -->
-        <section class="breadcrumb-bg pt-200 pb-180" data-background="img/page/page-bg.jpg">
+        <section class="breadcrumb-bg pt-200 pb-180" data-background="/frontend/img/page/page-bg.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 col-md-9">
@@ -68,11 +67,10 @@
     </main>
 
     <!-- footer start -->
-    @include('frontend.auth.layouts.footer') 
+    @include('frontend.auth.layouts.footer')
     <!-- footer end -->
 
     <!-- JS here -->
-    <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="/frontend/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="/frontend/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="/frontend/js/popper.min.js"></script>
@@ -90,7 +88,6 @@
     <script src="/frontend/js/waypoints.min.js"></script>
     <script src="/frontend/js/imagesloaded.pkgd.min.js"></script>
     <script src="/frontend/js/jquery.magnific-popup.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvEEMx3XDpByNzYNn0n62Zsq_sVYPx1zY"></script>
     <script src="/frontend/js/plugins.js"></script>
     <script src="/frontend/js/main.js"></script>
 </body>

@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-md-5 d-flex align-items-center">
                     <div class="logo logo-circle pos-rel">
-                        <a href="index.html"><img src="img/logo/logo.png" alt=""></a>
+                        <a href="/"><img src="/logo/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-xl-9 col-lg-9 col-md-9">

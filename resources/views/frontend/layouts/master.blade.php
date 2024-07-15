@@ -40,7 +40,6 @@
     </main>
 
     <!-- JS here -->
-    <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="/frontend/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="/frontend/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="/frontend/js/popper.min.js"></script>

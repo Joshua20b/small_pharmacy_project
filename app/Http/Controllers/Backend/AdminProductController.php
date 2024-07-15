@@ -39,23 +39,29 @@ class AdminProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            '' => ['required'],
+            'image'          => ['required'],
+            'name'           => ['required'],
+            'category'       => ['required'],
+            'original_price' => ['required'],
+            'discount_price' => ['required'],
+            'description'    => ['required'],
         ]);
 
-        // $productImage = $this->imageInterventionUploadImage($request, $inputName, $path, $width, $height);
+        $productImage = $this->imageInterventionUploadImage($request, 'image', '/uploads/product/', 300, 300);
 
         Product::create([
-            // 'unique_id'      => md5(time()),
-            // 'name'           => $request->
-            // 'category'       => $request->
-            // 'original_price' => $request->
-            // 'discount_price' => $request->
-            // 'description'    => $request->
-            // 'image'          => $productImage,
-            // 'status'         => 'active'
+            'unique_id'      => md5(time()),
+            'name'           => $request->name,
+            'category'       => $request->category,
+            'original_price' => $request->original_price,
+            'discount_price' => $request->discount_price,
+            'description'    => $request->description,
+            'image'          => $productImage,
+            'status'         => 'active'
         ]);
 
-        toastr()->success('Product created successsfully');
+        toastr()->success('Product created successfully');
+        return redirect()->route('admin.product.index');
     }
 
     /**
@@ -83,7 +89,45 @@ class AdminProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name'           => ['required'],
+            'category'       => ['required'],
+            'original_price' => ['required'],
+            'discount_price' => ['required'],
+            'description'    => ['required'],
+        ]);
+
+        $product = Product::findOrFail($id);
+
+        if ($request->hasFile('image')) {
+            $updateProductImage = $this->imageInterventionUpdateImage($request, 'image', '/uploads/product/', 300, 300, $product->image);
+            $request->validate([
+                'image' => ['required']
+            ]);
+
+            $product->image          = $updateProductImage;
+            $product->name           = $request->name;
+            $product->category       = $request->category;
+            $product->original_price = $request->original_price;
+            $product->discount_price = $request->discount_price;
+            $product->description    = $request->description;
+            $product->status         = $request->status;
+            $product->save();
+
+            toastr()->success('Product Updated Successfully');
+            return redirect()->route('admin.product.index');
+        }
+
+        $product->name           = $request->name;
+        $product->category       = $request->category;
+        $product->original_price = $request->original_price;
+        $product->discount_price = $request->discount_price;
+        $product->description    = $request->description;
+        $product->status         = $request->status;
+        $product->save();
+
+        toastr()->success('Product Updated Successfully');
+        return redirect()->route('admin.product.index');
     }
 
     /**
@@ -91,6 +135,10 @@ class AdminProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $this->removeImage($product->image);
+        $product->delete();
+        toastr()->success('Product deleted successfully');
+        return back();
     }
 }

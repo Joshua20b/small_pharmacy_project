@@ -14,7 +14,7 @@
                             </div>
                         </div>
                         <div class="footer-logo mb-35">
-                            <a href="#"><img src="img/logo/footer-logo.png" alt=""></a>
+                            <a href="#"><img src="/logo/logo.png" alt=""></a>
                         </div>
                         <div class="footer-contact-content mb-25">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
