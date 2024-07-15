@@ -19,5 +19,6 @@ Route::middleware('auth')->group(function () {
 
 // Pages route 
 Route::controller(PagesController::class)->group(function (){});
+// Admin route 
 
 require __DIR__.'/auth.php';
