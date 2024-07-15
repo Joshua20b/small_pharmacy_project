@@ -72,20 +72,19 @@
                                 <div class="col-lg-4 col-md-6">
                                     <div class="product mb-40">
                                         <div class="product__img">
-                                            <a href="porduct-details.html"><img src="{{ $product->image }}" alt=""></a>
+                                            <a href="{{ route('product-details', $product->unique_id) }}"><img src="{{ $product->image }}" alt=""></a>
                                             <div class="product-action text-center">
                                                 <a href="#"><i class="fas fa-shopping-cart"></i></a>
                                                 <a href="#"><i class="fas fa-heart"></i></a>
-                                                <a href="porduct-details.html"><i class="fas fa-expand"></i></a>
+                                                <a href="{{ route('product-details', $product->unique_id) }}"><i class="fas fa-expand"></i></a>
                                             </div>
                                         </div>
                                         <div class="product__content text-center pt-30">
-                                            <span class="pro-cat"><a href="#">Cloths</a></span>
-                                            <h4 class="pro-title"><a href="porduct-details.html">Medidove
-                                                    Product</a></h4>
+                                            <span class="pro-cat"><a href="#">{{ $product->category }}</a></span>
+                                            <h4 class="pro-title"><a href="{{ route('product-details', $product->unique_id) }}">{{ $product->name }}</a></h4>
                                             <div class="price">
-                                                <span>$95.00</span>
-                                                <span class="old-price">$120.00</span>
+                                                <span>${{ number_format($product->discount_price, 2) }}</span>
+                                                <span class="old-price">${{ number_format($product->original_price, 2) }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -99,35 +98,27 @@
                                 <div class="col-lg-4 col-md-6">
                                     <div class="product mb-30">
                                         <div class="product__img">
-                                            <a href="porduct-details.html"><img src="img/shop/img2.jpg" alt=""></a>
+                                            <a href="{{ route('product-details', $product->unique_id) }}"><img src="{{ $product->image }}" alt=""></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="product-list-content pt-10 mb-30">
                                         <div class="product__content mb-20">
-                                            <span class="pro-cat"><a href="#">Cloths</a></span>
-                                            <h4 class="pro-title"><a href="porduct-details.html">Medidove
-                                                    Product</a></h4>
+                                            <span class="pro-cat"><a href="#">{{ $product->category }}</a></span>
+                                            <h4 class="pro-title"><a href="{{ route('product-details', $product->unique_id) }}">{{ $product->name }}</a></h4>
                                             <div class="price">
-                                                <span>$95.00</span>
-                                                <span class="old-price">$120.00</span>
+                                                <span>${{ number_format($product->discount_price, 2) }}</span>
+                                                <span class="old-price">${{ number_format($product->original_price, 2) }}</span>
                                             </div>
                                         </div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor
-                                            incididunt ut labore et dolore magna
-                                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                            laboris nisi
-                                            ut
-                                            aliquip ex ea commodo consequat.
-                                            Duis aute irure dolor in reprehenderit in voluptate.</p>
-                                        <div class="product-action-list">
+                                        <p>{{ $product->description }}</p>
+                                        {{-- <div class="product-action-list">
                                             <a class="btn btn-theme" href="#">add to cart</a>
                                             <a class="action-btn" href="#"><i class="fas fa-heart"></i></a>
-                                            <a class="action-btn" href="porduct-details.html"><i
+                                            <a class="action-btn" href="#"><i
                                                     class="fas fa-expand"></i></a>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
