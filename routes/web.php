@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $data = ['title' => 'Logout'];
+    return view('frontend.dashboard', $data);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -22,10 +23,10 @@ Route::middleware('auth')->group(function () {
 // Pages route 
 Route::controller(PagesController::class)->group(function () {
     Route::get('product', 'products')->name('product');
-    Route::get('product/{unique_id}/view', '')->name('product-details');
+    Route::get('product/{unique_id}/view', 'viewProduct')->name('product-details');
 });
 // Admin route 
-Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+Route::middleware('auth', 'role:admin')->prefix('admin')->name('admin.')->group(function () {
     Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
     // Product route 
     Route::resource('product', AdminProductController::class);

@@ -1,9 +1,9 @@
 @extends('frontend.layouts.master')
 @section('content')
 
-<main>
+
     <!-- hero-area start -->
-    <section class="breadcrumb-bg pt-200 pb-180" data-background="img/page/page-bg.jpg">
+    <section class="breadcrumb-bg pt-200 pb-180" data-background="/frontend/img/page/page-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-9">
@@ -35,7 +35,7 @@
             <div class="row mt-20">
                 <div class="col-xl-4 col-lg-5 col-md-6">
                     <div class="product-showing mb-40">
-                        <p>Showing 1–22 of 32 results</p>
+                        {{-- <p>Showing 1–22 of 32 results</p> --}}
                     </div>
                 </div>
                 <div class="col-xl-8 col-lg-7 col-md-6">
@@ -72,19 +72,26 @@
                                 <div class="col-lg-4 col-md-6">
                                     <div class="product mb-40">
                                         <div class="product__img">
-                                            <a href="{{ route('product-details', $product->unique_id) }}"><img src="{{ $product->image }}" alt=""></a>
+                                            <a href="{{ route('product-details', $product->unique_id) }}"><img
+                                                    src="{{ $product->image }}" alt=""></a>
                                             <div class="product-action text-center">
-                                                <a href="#"><i class="fas fa-shopping-cart"></i></a>
-                                                <a href="#"><i class="fas fa-heart"></i></a>
-                                                <a href="{{ route('product-details', $product->unique_id) }}"><i class="fas fa-expand"></i></a>
+                                                <a href="{{ route('product-details', $product->unique_id) }}"><i
+                                                        class="fas fa-shopping-cart"></i></a>
+                                                <a href="{{ route('product-details', $product->unique_id) }}"><i
+                                                        class="fas fa-heart"></i></a>
+                                                <a href="{{ route('product-details', $product->unique_id) }}"><i
+                                                        class="fas fa-expand"></i></a>
                                             </div>
                                         </div>
                                         <div class="product__content text-center pt-30">
                                             <span class="pro-cat"><a href="#">{{ $product->category }}</a></span>
-                                            <h4 class="pro-title"><a href="{{ route('product-details', $product->unique_id) }}">{{ $product->name }}</a></h4>
+                                            <h4 class="pro-title"><a
+                                                    href="{{ route('product-details', $product->unique_id) }}">{{
+                                                    $product->name }}</a></h4>
                                             <div class="price">
                                                 <span>${{ number_format($product->discount_price, 2) }}</span>
-                                                <span class="old-price">${{ number_format($product->original_price, 2) }}</span>
+                                                <span class="old-price">${{ number_format($product->original_price, 2)
+                                                    }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -98,7 +105,8 @@
                                 <div class="col-lg-4 col-md-6">
                                     <div class="product mb-30">
                                         <div class="product__img">
-                                            <a href="{{ route('product-details', $product->unique_id) }}"><img src="{{ $product->image }}" alt=""></a>
+                                            <a href="{{ route('product-details', $product->unique_id) }}"><img
+                                                    src="{{ $product->image }}" alt=""></a>
                                         </div>
                                     </div>
                                 </div>
@@ -106,19 +114,16 @@
                                     <div class="product-list-content pt-10 mb-30">
                                         <div class="product__content mb-20">
                                             <span class="pro-cat"><a href="#">{{ $product->category }}</a></span>
-                                            <h4 class="pro-title"><a href="{{ route('product-details', $product->unique_id) }}">{{ $product->name }}</a></h4>
+                                            <h4 class="pro-title"><a
+                                                    href="{{ route('product-details', $product->unique_id) }}">{{
+                                                    $product->name }}</a></h4>
                                             <div class="price">
                                                 <span>${{ number_format($product->discount_price, 2) }}</span>
-                                                <span class="old-price">${{ number_format($product->original_price, 2) }}</span>
+                                                <span class="old-price">${{ number_format($product->original_price, 2)
+                                                    }}</span>
                                             </div>
                                         </div>
                                         <p>{{ $product->description }}</p>
-                                        {{-- <div class="product-action-list">
-                                            <a class="btn btn-theme" href="#">add to cart</a>
-                                            <a class="action-btn" href="#"><i class="fas fa-heart"></i></a>
-                                            <a class="action-btn" href="#"><i
-                                                    class="fas fa-expand"></i></a>
-                                        </div> --}}
                                     </div>
                                 </div>
                             </div>

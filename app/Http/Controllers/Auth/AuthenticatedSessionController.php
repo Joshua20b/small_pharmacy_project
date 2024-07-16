@@ -31,7 +31,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if ($request->role === 'admin') {
+        if ($request->user()->role === 'admin') {
             toastr()->success('Login Successful');
             return redirect()->intended('/admin/dashboard');
         }
