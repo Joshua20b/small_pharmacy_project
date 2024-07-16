@@ -37,7 +37,7 @@
                                 <th><img src="{{ $product->image }}" alt="{{ $product->name }}" width="50"></th>
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->category }}</td>
-                                <td>${{ $product->discount_price }}</td>
+                                <td>${{ number_format($product->discount_price, 2) }}</td>
                                 <td>
                                     @if($product->status == 'active')
                                     <div class="text-success">Active</div>

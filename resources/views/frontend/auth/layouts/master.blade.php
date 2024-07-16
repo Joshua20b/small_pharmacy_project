@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="manifest" href="site.html">
+    <link rel="manifest" href="#">
     <link rel="shortcut icon" type="image/x-icon" href="/frontend/img/favicon.png">
     <!-- Place favicon.png in the root directory -->
 
