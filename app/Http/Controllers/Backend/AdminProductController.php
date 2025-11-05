@@ -95,15 +95,14 @@ class AdminProductController extends Controller
             'original_price' => ['required'],
             'discount_price' => ['required'],
             'description'    => ['required'],
+            'image'          => ['nullable', 'image', 'mimes:jpg,png,jpeg', 'max:2048'],
         ]);
 
         $product = Product::findOrFail($id);
 
         if ($request->hasFile('image')) {
+            
             $updateProductImage = $this->imageInterventionUpdateImage($request, 'image', '/uploads/product/', 300, 300, $product->image);
-            $request->validate([
-                'image' => ['required']
-            ]);
 
             $product->image          = $updateProductImage;
             $product->name           = $request->name;
